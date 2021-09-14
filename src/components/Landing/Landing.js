@@ -4,7 +4,7 @@ import {Container} from 'reactstrap'
 const Landing = () => {
     return (
         <Container>
-        
+            <p>Landing component</p>
         </Container>
     )
 }
