@@ -1,6 +1,7 @@
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Landing from './components/Landing/Landing';
+import Auth from './components/Auth/Auth';
 
 function App() {
   
@@ -9,6 +10,7 @@ function App() {
     <div className="App">
      <Navbar />
      <Landing />
+     <Auth />
      
     </div>
 
