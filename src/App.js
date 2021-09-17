@@ -1,6 +1,10 @@
+import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Landing from './components/Landing/Landing';
+import Footer from './components/sites/Footer';
+import {BrowserRouter as Router} from 'react-router-dom';
+
 
 function App() {
   
@@ -8,8 +12,12 @@ function App() {
     
     <div className="App">
      <Navbar />
-     <Landing />
+     <Router />
      
+
+
+     <br />
+     <Footer />        
     </div>
   
   );
