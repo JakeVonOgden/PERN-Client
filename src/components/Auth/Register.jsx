@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
-
+import './Register.css';
 
 const Register = (props) => {
 
@@ -49,6 +50,12 @@ const handleSubmit = (event) => {
                 </FormGroup>
                 <Button type="submit">Register</Button>
             </Form>
+            <h4>Already registered?</h4>
+            <Link to="/login" updateToken={props.updateToken}>
+                <button type="button">
+                    Log In
+                </button>
+            </Link>
         </div>
     )
     }

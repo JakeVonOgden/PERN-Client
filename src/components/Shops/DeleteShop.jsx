@@ -4,20 +4,20 @@ import {Table, Button} from 'reactstrap';
 
 
 
-const MerchDelete = (props) => {
+const ShopDelete = (props) => {
 
-    const [merchandise, setMerchandise] = useState([]);
+    const [shop, setShop] = useState([]);
 
    
-    const deleteMerch = (merchandise) => {
-        fetch(`http://localhost:4000/merchandise/${merchandise.id}`, {
+    const deleteShop = (shop) => {
+        fetch(`http://localhost:4000/shop/${shop.id}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': props.token
             })
         })
-        .then(() => props.fetchMerch())
+        .then(() => props.fetchShop())
         .catch(err => console.log(err))
     }
 
@@ -29,4 +29,4 @@ const MerchDelete = (props) => {
     )
 }
 
-export default MerchDelete;
+export default ShopDelete;

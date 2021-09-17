@@ -1,54 +1,51 @@
 import React, {useState} from 'react';
 import {Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody} from 'reactstrap';
 
-const MerchEdit = (props) => {
+const ShopEdit = (props) => {
     const [category, setCategory] = useState('');
     const [name, setName] = useState('');
     const [image, setImage] = useState('');
     const [description, setDescription] = useState('');
-    const [price, setPrice] = useState('');
 
-const merchUpdate = (event, merchandise) => {
+
+const shopUpdate = (event, shop) => {
     event.preventDefault();
-    fetch(`http://localhost:4000/merchandise/${props.merchToUpdate.id}`, {
+    fetch(`http://localhost:4000/shop/${props.shopToUpdate.id}`, {
         method: 'PUT',
-        body: JSON.stringify({category: editCategory, name: editName, image: editImage, description: editDescription, price: editPrice}),
+        body: JSON.stringify({category: editCategory, name: editName, image: editImage, description: editDescription}),
         headers: new Headers({
             'Content-Type': 'application/json',
             'Authorization': props.token
         })
     }) .then((res) => {
-        props.fetchMerch();
+        props.fetchShop();
         props.updateOff();
     })
 }
 
     return(
         <Modal isOpen={true}>
-            <ModalHeader>Edit a Product</ModalHeader>
+            <ModalHeader>Edit a Shop</ModalHeader>
             <ModalBody>
-                <Form onSubmit={merchUpdate}>
+                <Form onSubmit={shopUpdate}>
                     <FormGroup>
-                        <Label htmlFor="category">Edit Category:</Label><Input name="category" value={editCategory} onChange={(e) => setEditCategory(e.target.value)}/>
+                        <Label htmlFor="category">Shop Category:</Label><Input name="category" value={editCategory} onChange={(e) => setEditCategory(e.target.value)}/>
 
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlFor="name"> Edit Product Name:</Label>
+                        <Label htmlFor="name"> Edit Shop Name:</Label>
                         <Input name="name" value={editName} onChange={(e) => setEditName(e.target.value)}/>
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlFor="image">Edit Product Image Link:</Label>
+                        <Label htmlFor="image">Edit Shop Logo Link:</Label>
                         <Input name="image" value={editImage} onChange={(e) => 
                         setEditImage(e.target.value)} />
                     </FormGroup> 
                     <FormGroup>
-                        <Label htmlFor="description"> Edit Product Description:</Label>
+                        <Label htmlFor="description"> Edit Shop Description:</Label>
                         <Input name="description" value={editDescription} onChange={(e) => setEditDescription(e.target.value)}/>
                     </FormGroup>        
-                    <FormGroup>
-                        <Label htmlFor="price"> Edit Price:</Label>
-                        <Input name="price" value={editPrice} onChange={(e) => setEditPrice(e.target.value)}/>
-                    </FormGroup>
+
                     <Button type="submit">Update</Button>
                 </Form>
             </ModalBody>
@@ -56,4 +53,4 @@ const merchUpdate = (event, merchandise) => {
     )
     }
 
-export default MerchEdit;
+export default ShopEdit;

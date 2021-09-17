@@ -1,5 +1,8 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
+import './Login.css';
+
 
 const Login = (props) => {
     const [email, setEmail] = useState('');
@@ -22,6 +25,7 @@ const handleSubmit = (event) => {
 
     return(
         <div>
+            <div>
             <h1>Login</h1>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
@@ -34,6 +38,13 @@ const handleSubmit = (event) => {
                     </FormGroup>
                     <Button type="submit">Login</Button>
             </Form>
+            </div>
+            <div>
+            <h4>Need to create an account?</h4>
+            <Link to="/register" updateToken={props.updateToken}>
+                <button type="button">Register</button>
+            </Link>   
+        </div>
         </div>
     )
 }
