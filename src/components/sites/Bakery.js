@@ -4,7 +4,7 @@ import { Container, Row, Col, Card, CardImg, CardText} from 'reactstrap';
 
 const Bakery = () => {
     return (
-        <Container className='cakes'>
+        <Container className='cakes' style={{fontFamily:'fantasy', textAlign:'center'}}>
             <Row>
                 <Col md='4'>
                     <Card>

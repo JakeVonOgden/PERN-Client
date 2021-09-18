@@ -4,7 +4,7 @@ import { Container, Row, Col, Card, CardImg, CardText} from 'reactstrap';
 
 const WallArt = () => {
     return (
-        <Container>
+        <Container style={{fontFamily:'fantasy', textAlign:'center'}}>
             <Row>
                 <Col md='3'>
                 <Card>

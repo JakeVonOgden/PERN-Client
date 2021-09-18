@@ -4,7 +4,7 @@ import { Container, Row, Col, Card, CardImg, CardText} from 'reactstrap';
 
 const Apparel = () => {
     return (
-        <Container>
+        <Container style={{fontFamily:'fantasy', textAlign:'center'}}>
             <Row className='mensLine'>
                 <Col md='6'>
                 <Card>
