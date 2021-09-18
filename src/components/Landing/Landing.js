@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col} from 'reactstrap';
 import {Card, CardImg, CardBody, CardTitle, CardText, Button} from 'reactstrap'
+import { Link } from 'react-router-dom';
 
 const Landing = () => {
     return (
@@ -21,7 +22,7 @@ const Landing = () => {
                     <CardText>
                     Click to see baked goods!
                     </CardText>
-                    <Button variant='primary'>Click Here</Button>
+                    <Button variant='primary'><Link to='/bakery'>Click Here</Link></Button>
             </CardBody>
         </Card>
         </Col>
@@ -37,7 +38,7 @@ const Landing = () => {
                     <CardText>
                     Click to see fabulous palettes!
                     </CardText>
-                    <Button variant='primary'>Click Here</Button>
+                    <Button variant='primary'><Link to='/wallart'>Click Here</Link></Button>
             </CardBody>
         </Card>
         </Col>
@@ -53,7 +54,7 @@ const Landing = () => {
                     <CardText>
                     Click to see works of art!
                     </CardText>
-                    <Button variant='primary'>Click Here</Button>
+                    <Button variant='primary'><Link to='/handmadegoods'>Click Here</Link></Button>
             </CardBody>
         </Card>
         </Col>
@@ -69,7 +70,7 @@ const Landing = () => {
                     <CardText>
                     Click to see stylish designs!
                     </CardText>
-                    <Button variant='primary'>Click Here</Button>
+                    <Button variant='primary'><Link to='/apparel'>Click Here</Link></Button>
             </CardBody>
         </Card>
         </Col>

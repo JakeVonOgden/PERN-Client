@@ -20,14 +20,14 @@ const Navbar = () => {
                 <NavLink  activeStyle>
                     <Link to='/bakery'>Bakery</Link>
                 </NavLink>
-                <NavLink to='/wallart' activeStyle>
-                    Wall Art
+                <NavLink  activeStyle>
+                    <Link to='/wallart'>Wall Art</Link>
                 </NavLink>
-                <NavLink to='/handMadeGoods' activeStyle>
-                    Handmade Goods
+                <NavLink activeStyle>
+                    <Link to='/handMadeGoods'>Handmade Goods</Link>
                 </NavLink>
-                <NavLink to='/apparel' activeStyle>
-                    Apparel
+                <NavLink activeStyle>
+                    <Link to='/apparel'>Apparel</Link>
                 </NavLink>
                 <NavLink to='/sign-up' activeStyle>
                     Sign Up
