@@ -40,7 +40,7 @@ const protectedViews =() => {
     <div className="App">
      <Navbar />
 
-     
+    
      {protectedViews()}
 
      <Router />
