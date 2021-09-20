@@ -1,7 +1,6 @@
 import './App.css';
 import React, {useState, useEffect} from 'react';
 import Navbar from './components/Navbar/Navbar';
-import Landing from './components/Landing/Landing';
 import Auth from './components/Auth/Auth';
 import Placeholder from './components/Merchandise/Placeholder';
 import Footer from './components/sites/Footer';
@@ -41,7 +40,7 @@ const protectedViews =() => {
     <div className="App">
      <Navbar />
 
-     <Landing />
+     
      {protectedViews()}
 
      <Router />
