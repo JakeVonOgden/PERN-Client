@@ -2,7 +2,7 @@ import './App.css';
 import React, {useState, useEffect} from 'react';
 import Navbar from './components/Navbar/Navbar';
 import Login from './components/Auth/Login';
-import Placeholder from './components/Merchandise/Placeholder';
+import Landing from './components/Landing/Landing';
 import Footer from './components/sites/Footer';
 import {BrowserRouter as Router} from 'react-router-dom';
 
@@ -16,7 +16,7 @@ function App() {
     if (localStorage.getItem('token')){
       setSessionToken(localStorage.getItem('token'));
     }
-    console.log(sessionToken)
+    // console.log(sessionToken)
 }, [])
 
 const updateToken = (newToken) => {
@@ -25,20 +25,20 @@ const updateToken = (newToken) => {
   console.log(sessionToken);
 }
 
-// const clearToken = () => {
-//   localStorage.clear();
-//   setSessionToken('');
-// }
+const clearToken = () => {
+  localStorage.clear();
+  setSessionToken('');
+}
 
 const protectedViews =() => {
-  return (sessionToken === localStorage.getItem('token') ? <Placeholder token={sessionToken} />
+  return (sessionToken === localStorage.getItem('token') ? <Landing token={sessionToken} />
   : <Login updateToken={updateToken} /> )
 }
 
   return (
     
     <div className="App">
-     <Navbar />
+     <Navbar clearToken={clearToken} updateToken={updateToken}  />
 
     
      {protectedViews()}
