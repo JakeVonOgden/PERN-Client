@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
 import './Login.css';
 
@@ -19,6 +18,7 @@ const handleSubmit = (event) => {
     }) .then(
         (response) => response.json()
     ) .then((data) => {
+        console.log(data)
         props.updateToken(data.sessionToken);
     }).catch(err => console.log(err))
 }
@@ -41,9 +41,11 @@ const handleSubmit = (event) => {
             </div>
             <div>
             <h4>Need to create an account?</h4>
-            <Link to="/register" updateToken={props.updateToken}>
+            
+            <a href="/register" >
                 <button type="button">Register</button>
-            </Link>   
+            </a>   
+            
         </div>
         </div>
     )

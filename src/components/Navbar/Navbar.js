@@ -11,8 +11,10 @@ import Login from '../Auth/Login';
 import Register from '../Auth/Register';
 
 
-const Navbar = () => {
+const Navbar = (props) => {
+
     return (
+
         <Router>
         <Nav>
             <NavItem style={{display:'flex', justifyContent:'Left', alignItems:'Left'}}>
@@ -48,8 +50,8 @@ const Navbar = () => {
             <Route path='/wallart'><WallArt /></Route>
             <Route path='/handmadegoods'><HandmadeGoods /></Route>
             <Route path='/apparel'><Apparel /></Route>
-            <Route path='/login'><Login /></Route>
-            <Route path='/register'><Register /></Route>
+            <Route path='/login'><Login updateToken={props.updateToken} /></Route>
+            <Route path='/register'><Register updateToken={props.updateToken} /></Route>
         </Switch>
         </Router>
     )
