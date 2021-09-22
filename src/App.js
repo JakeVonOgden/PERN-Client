@@ -1,9 +1,7 @@
-import React from 'react';
 import './App.css';
 import React, {useState, useEffect} from 'react';
 import Navbar from './components/Navbar/Navbar';
-import Landing from './components/Landing/Landing';
-import Auth from './components/Auth/Auth';
+import Login from './components/Auth/Login';
 import Placeholder from './components/Merchandise/Placeholder';
 import Footer from './components/sites/Footer';
 import {BrowserRouter as Router} from 'react-router-dom';
@@ -34,7 +32,7 @@ const updateToken = (newToken) => {
 
 const protectedViews =() => {
   return (sessionToken === localStorage.getItem('token') ? <Placeholder token={sessionToken} />
-  : <Auth updateToken={updateToken} />)
+  : <Login updateToken={updateToken} /> )
 }
 
   return (
@@ -42,7 +40,7 @@ const protectedViews =() => {
     <div className="App">
      <Navbar />
 
-     <Landing />
+    
      {protectedViews()}
 
      <Router />

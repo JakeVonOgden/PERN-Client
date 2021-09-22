@@ -10,7 +10,7 @@ const Login = (props) => {
 
 const handleSubmit = (event) => {
     event.preventDefault();
-    fetch('http://localhost:4000/user/login',{
+    fetch('https://juniper-server.herokuapp.com/user/login',{
         method: 'POST',
         body: JSON.stringify({email: email, password: password}),
         headers: new Headers({

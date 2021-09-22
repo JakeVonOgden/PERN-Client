@@ -12,24 +12,26 @@ const Register = (props) => {
 
 
 const handleSubmit = (event) => {
-
-
-
     event.preventDefault();
-    fetch("http://localhost:4000/user/register", {
+    fetch("https://juniper-server.herokuapp.com/user/register", {
         method: 'POST',
         body: JSON.stringify({email: email, firstName: firstName, lastName: lastName, password: password}),
         headers: new Headers({
             'Content-Type': 'application/json'
-        })
+        }),
+    
     }).then(
         (response) => response.json()
     ).then((data) => {
+        console.log(data);
+        let token = data.sessionToken;
+        // localStorage.setItem('SessionToken', token);
         props.updateToken(data.sessionToken)
     }).catch ((err) => console.log(err))
 }
     return(
         <div>
+        
             <h1>Register for an Account</h1>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
@@ -51,11 +53,12 @@ const handleSubmit = (event) => {
                 <Button type="submit">Register</Button>
             </Form>
             <h4>Already registered?</h4>
-            <Link to="/login" updateToken={props.updateToken}>
+            
+            {/* <Link to="/login" updateToken={props.updateToken}>
                 <button type="button">
                     Log In
                 </button>
-            </Link>
+            </Link> */}
         </div>
     )
     }
