@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
+
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
 import './Register.css';
 
@@ -11,25 +11,30 @@ const Register = (props) => {
     const [password, setPassword] = useState('');
 
 
+
 const handleSubmit = (event) => {
-
-
-
+    // console.log("hello submit")
     event.preventDefault();
-    fetch("http://localhost:4000/user/register", {
+    
+    fetch("https://juniper-server.herokuapp.com/user/register", {
         method: 'POST',
         body: JSON.stringify({email: email, firstName: firstName, lastName: lastName, password: password}),
         headers: new Headers({
             'Content-Type': 'application/json'
-        })
+        }),
+    
     }).then(
         (response) => response.json()
     ).then((data) => {
-        props.updateToken(data.sessionToken)
+        console.log("hello", data.user.sessionToken);
+        // let token = data.user.sessionToken;
+
+        props.updateToken(data.user.sessionToken)
     }).catch ((err) => console.log(err))
 }
     return(
         <div>
+        
             <h1>Register for an Account</h1>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
@@ -48,14 +53,16 @@ const handleSubmit = (event) => {
                     <Label htmlFor="password">Password</Label>
                     <Input onChange={(e) => setPassword(e.target.value)} name="password" value={password} />
                 </FormGroup>
-                <Button type="submit">Register</Button>
+                <Button  type="submit">Register</Button>
             </Form>
             <h4>Already registered?</h4>
-            <Link to="/login" updateToken={props.updateToken}>
+            
+            <a href="/login">
                 <button type="button">
                     Log In
                 </button>
-            </Link>
+            </a>
+            
         </div>
     )
     }

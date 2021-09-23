@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col} from 'reactstrap';
-import {Card, CardImg, CardBody, CardTitle, CardText, Button} from 'reactstrap'
-import { Link } from 'react-router-dom';
+// import {Card, CardImg, CardBody, CardTitle, CardText, Button} from 'reactstrap'
+// import { Link, Router } from 'react-router-dom';
 
 
 const Landing = () => {
@@ -10,8 +10,8 @@ const Landing = () => {
             <Container>
             <h1 style={{textAlign:'center'}}>Welcome to Juniper</h1>
             <br />
-            
-            <Row>
+{/*             
+       <Row>
             <Col md='3'>
             <Card className='mb-3' style={{ color:'#000'}}>
             <CardImg 
@@ -73,10 +73,11 @@ const Landing = () => {
                     </CardText>
                     <Button variant='primary'><Link to='/apparel'>Click Here</Link></Button>
             </CardBody>
-            </Card>
-            </Col>
-            </Row>
-         </Container>
+        </Card>
+        </Col>
+        </Row>
+     */}
+    </Container>
     )
 }
 
