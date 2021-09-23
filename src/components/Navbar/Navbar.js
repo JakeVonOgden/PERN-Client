@@ -7,9 +7,11 @@ import Bakery from '../sites/Bakery';
 import WallArt from '../sites/WallArt';
 import HandmadeGoods from '../sites/HandmadeGoods';
 import Apparel from '../sites/Apparel';
+import Register from '../Auth/Register';
+import Login from '../Auth/Login';
 
 
-const Navbar = () => {
+const Navbar = (props) => {
     return (
         <Router>
         <Nav>
@@ -30,7 +32,7 @@ const Navbar = () => {
                     <Link to='/apparel'>Apparel</Link>
                 </NavLink>
                 <NavLink to='/sign-up' activeStyle>
-                    Sign Up
+                    Register
                 </NavLink>
             </NavItem>
             <NavLink>

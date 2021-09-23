@@ -1,4 +1,4 @@
-import { Row } from "reactstrap";
+import React from "react";
 
 const Footer = () => {
     return (
