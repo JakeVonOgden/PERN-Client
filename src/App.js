@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/Navbar';
 import Auth from './components/Auth/Auth';
 import Placeholder from './components/Merchandise/Placeholder';
 import Footer from './components/sites/Footer';
+import MerchIndex from './components/Merchandise/MerchIndex';
 import {BrowserRouter as Router} from 'react-router-dom';
 
 
