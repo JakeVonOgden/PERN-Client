@@ -1,4 +1,4 @@
-import { Row } from "reactstrap";
+
 
 const Footer = () => {
     return (

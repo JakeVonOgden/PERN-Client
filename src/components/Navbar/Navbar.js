@@ -7,10 +7,14 @@ import Bakery from '../sites/Bakery';
 import WallArt from '../sites/WallArt';
 import HandmadeGoods from '../sites/HandmadeGoods';
 import Apparel from '../sites/Apparel';
+import Login from '../Auth/Login';
+import Register from '../Auth/Register';
 
 
-const Navbar = () => {
+const Navbar = (props) => {
+
     return (
+
         <Router>
         <Nav>
             <NavItem style={{display:'flex', justifyContent:'Left', alignItems:'Left'}}>
@@ -29,13 +33,15 @@ const Navbar = () => {
                 <NavLink activeStyle>
                     <Link to='/apparel'>Apparel</Link>
                 </NavLink>
-                <NavLink to='/sign-up' activeStyle>
-                    Sign Up
+                <NavLink activeStyle>
+                    <Link to='/register'>
+                    Sign Up</Link>
                 </NavLink>
-            </NavItem>
-            <NavLink>
-                <Button to='/sign-in'>Sign In</Button>
+          
+            <NavLink activeStyle>
+                <Link to='/login'>Sign In</Link>
             </NavLink>
+              </NavItem>
         </Nav>
 
         <Switch>
@@ -44,6 +50,8 @@ const Navbar = () => {
             <Route path='/wallart'><WallArt /></Route>
             <Route path='/handmadegoods'><HandmadeGoods /></Route>
             <Route path='/apparel'><Apparel /></Route>
+            <Route path='/login'><Login updateToken={props.updateToken} /></Route>
+            <Route path='/register'><Register updateToken={props.updateToken} /></Route>
         </Switch>
         </Router>
     )
