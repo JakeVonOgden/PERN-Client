@@ -1,17 +1,13 @@
 import './App.css';
 import React, {useState, useEffect} from 'react';
 import Navbar from './components/Navbar/Navbar';
-<<<<<<< HEAD
-import Auth from './components/Auth/Auth';
-import Placeholder from './components/Merchandise/Placeholder';
-=======
 import Login from './components/Auth/Login';
 import Landing from './components/Landing/Landing';
->>>>>>> 86f9838fb1975320b9d2c611880aa6f4b5a5e08c
 import Footer from './components/sites/Footer';
 import MerchIndex from './components/Merchandise/MerchIndex';
 import {BrowserRouter as Router} from 'react-router-dom';
 
+   
 
 
 function App() {
