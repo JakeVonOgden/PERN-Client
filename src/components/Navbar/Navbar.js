@@ -43,6 +43,10 @@ const Navbar = (props) => {
             <NavLink activeStyle>
                 <Link to='/login'>Sign In</Link>
             </NavLink>
+            <NavLink>
+                <Button variant="link" onClick={props.clearToken}>Logout</Button> 
+
+                </NavLink>
               </NavItem>
         </Nav>
 

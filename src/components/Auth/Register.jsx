@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
+import {Form, FormGroup, Label, Input, Button, Container} from 'reactstrap';
 import './Register.css';
 
 const Register = (props) => {
@@ -34,7 +34,7 @@ const handleSubmit = (event) => {
 }
     return(
         <div>
-        
+       <Container className='register'>
             <h1>Register for an Account</h1>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
@@ -53,16 +53,17 @@ const handleSubmit = (event) => {
                     <Label htmlFor="password">Password</Label>
                     <Input onChange={(e) => setPassword(e.target.value)} name="password" value={password} />
                 </FormGroup>
-                <Button  type="submit">Register</Button>
+                <br /> 
+                
+                <Button href="/account" variant="link" type="submit" >Register</Button>
             </Form>
-            <h4>Already registered?</h4>
+            <hr />
+            Already registered?  
+<a href="/login">Log In</a>
+                
             
-            <a href="/login">
-                <button type="button">
-                    Log In
-                </button>
-            </a>
             
+        </Container>
         </div>
     )
     }
