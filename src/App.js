@@ -5,6 +5,7 @@ import Login from './components/Auth/Login';
 import Landing from './components/Landing/Landing';
 import Footer from './components/sites/Footer';
 import MerchIndex from './components/Merchandise/MerchIndex';
+import MerchandiseIndex from './components/Merchandise/MerchandiseIndex';
 import {BrowserRouter as Router} from 'react-router-dom';
 
    
@@ -33,17 +34,17 @@ const clearToken = () => {
 }
 
 const protectedViews =() => {
-  return (sessionToken === localStorage.getItem('token') ? <Landing token={sessionToken} />
+  return (sessionToken === localStorage.getItem('token') ? <MerchandiseIndex token={sessionToken} />
   : <Login updateToken={updateToken} /> )
 }
 
   return (
     
     <div className="App">
-     <Navbar clearToken={clearToken} updateToken={updateToken}  />
+     <Navbar clearToken={clearToken} updateToken={updateToken} sessionToken={sessionToken} protectedViews={protectedViews} />
 
     
-     {protectedViews()}
+     {/* {protectedViews()} */}
 
      <Router />
 

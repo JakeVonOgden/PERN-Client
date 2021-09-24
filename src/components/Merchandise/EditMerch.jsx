@@ -7,7 +7,7 @@ const MerchEdit = (props) => {
     const [image, setImage] = useState('');
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
-
+    https://juniper-server.herokuapp.com/user/login
 const merchUpdate = (event, merchandise) => {
     event.preventDefault();
     fetch(`http://localhost:4000/merchandise/${props.merchToUpdate.id}`, {
