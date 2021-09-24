@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
+import {Form, FormGroup, Label, Input, Button, Container} from 'reactstrap';
 import './Login.css';
 
 
@@ -25,8 +25,10 @@ const handleSubmit = (event) => {
 
     return(
         <div>
-            <div>
+            
+            <Container className='login'>
             <h1>Login</h1>
+
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label htmlFor="email">Email</Label>
@@ -36,18 +38,18 @@ const handleSubmit = (event) => {
                     <Label htmlFor="password">Password</Label>
                     <Input onChange={(e) => setPassword(e.target.value)} name="password" value={password} />
                     </FormGroup>
-                    <Button type="submit">Login</Button>
+                    <br />
+
+                    <Button href='/account' type="submit">Login</Button>
             </Form>
-            </div>
-            <div>
-            <h4>Need to create an account?</h4>
             
-            <a href="/register" >
-                <button type="button">Register</button>
-            </a>   
-            
+            <hr />
+            Need to create an account?  <a href="/register" >Register</a>
+    
+            </Container> 
         </div>
-        </div>
+       
+        
     )
 }
 
