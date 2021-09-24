@@ -6,7 +6,7 @@ const HandmadeGoods = () => {
     return (
         <Container>
         <Row className='womanLine'>
-            <Col sm='3'>
+            <Col md='3'>
                 <Card>
                     <CardImg src='https://media.istockphoto.com/photos/woman-holding-basket-with-home-made-soaps-picture-id1226800200?b=1&k=20&m=1226800200&s=170667a&w=0&h=Y2w898i8-pz0x2x9hw_4aD2xqo7qjQcP0VD3LusTgsQ=' width={100} height={300} alt='soaps' />
                     <CardImgOverlay>

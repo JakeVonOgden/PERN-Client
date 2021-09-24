@@ -37,7 +37,7 @@ const MerchandiseIndex = (props) => {
              </Col>
         
             <Col md='8'>
-                <MerchandiseTable landings={landings} fetchLandings={fetchLandings} />
+                <MerchandiseTable landings={landings} fetchLandings={fetchLandings} sessionToken={props.sessionToken}/>
             </Col>
         </Row>
     </Container>

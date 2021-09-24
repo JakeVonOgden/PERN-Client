@@ -1,12 +1,12 @@
 import React from "react";
-import { Card, CardText, CardBody, CardImg, Button} from "reactstrap";
+import { Table, Button} from "reactstrap";
 
 const MerchandiseTable = (props) => {
 
     const landingMapper = () => {
         return props.landings.map((landing, index) => {
             return(
-                <tr key={index}>
+               <tr key={index}>
                     <th scope ='row'>{landing.catagory}</th>
                     <td>{landing.image}</td>
                     <td>{landing.name}</td>
@@ -17,26 +17,29 @@ const MerchandiseTable = (props) => {
                         <Button color='danger'>Delete</Button>
                     </td>
                 </tr>
+          
             )
         })
     }
+
     return (
         <div>
-            <h3>Merchandise History</h3>
-            <hr />
-            <Card>
-                <CardImg />
-                <CardBody>
-                    <CardText>
-                        <ul>
-                        <li>Catagory</li>
-                        <li>Name</li>
-                        <li>Description</li>
-                        <li>Price</li>
-                        </ul>
-                    </CardText>
-                </CardBody>
-            </Card>
+            <h3>Merchandise Add History</h3>
+            <hr/>
+            <Table>
+                <thead>
+                    <tr>
+                    <th>Category</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {landingMapper()}
+                </tbody>
+            </Table>
 
         </div>
     )
