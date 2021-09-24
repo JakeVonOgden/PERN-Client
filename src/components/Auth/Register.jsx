@@ -34,7 +34,7 @@ const handleSubmit = (event) => {
 }
     return(
         <div>
-        
+       
             <h1>Register for an Account</h1>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
@@ -53,16 +53,17 @@ const handleSubmit = (event) => {
                     <Label htmlFor="password">Password</Label>
                     <Input onChange={(e) => setPassword(e.target.value)} name="password" value={password} />
                 </FormGroup>
-                <Button  type="submit">Register</Button>
+                <a href="./landing">
+                <Button variant="secondary" type="submit" >Register</Button></a>
             </Form>
             <h4>Already registered?</h4>
             
             <a href="/login">
-                <button type="button">
+                <Button variant="secondary" type="button" >
                     Log In
-                </button>
+                </Button>
             </a>
-            
+
         </div>
     )
     }
