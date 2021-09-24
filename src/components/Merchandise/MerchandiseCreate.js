@@ -1,5 +1,5 @@
 import React, {useState } from "react";
-import { Card, CardImg, CardBody, CardText, Label, Input, Button } from "reactstrap";
+import { Card, CardImg, CardBody, CardText, Label, Input, Button, Form } from "reactstrap";
 
 
 const MerchandiseCreate = (props) => {
@@ -8,16 +8,18 @@ const MerchandiseCreate = (props) => {
         const [name, setName] = useState('');
         const [image, setImage] = useState('');
         const [description, setDescription] = useState('');
+        const [owner, setOwner] = useState('');
         const [price, setPrice] = useState('');
 
         const handleSubmit =(e) => {
             e.preventDefault();
             fetch('https://juniper-server.herokuapp.com/merchandise/', {
                 method: 'POST',
-                body: JSON.stringify({merchandise: {category, image, name, description, price}}),
+                body: JSON.stringify({category: category, image: image, name: name, description: description, owner: owner, price: price}),
                 headers: new Headers({
                     'Content-Type': 'application/json',
-                    'Authorization': props.token
+                    'Authorization': `Bearer ${props.sessionToken}`
+
                 })
             }).then((res) => res.json())
             .then((merchandiseData) =>{
@@ -26,6 +28,7 @@ const MerchandiseCreate = (props) => {
                 setImage('');
                 setName('');
                 setDescription('');
+                setOwner('');
                 setPrice('');
                 props.fetchLandings();
             })
@@ -35,23 +38,27 @@ const MerchandiseCreate = (props) => {
         return (
             <div>
                 <h3>Add Merchandise</h3>
-                <Card onSubmit={handleSubmit}>
+                <Form onSubmit={handleSubmit}>
+                    <Card>
                      <CardBody>
                         <CardText>
-                            <Label htmlFor='category'/>
-                            <Input name='catagory' value={category} onChange={(e) => setCategory(e.target.value)} />
-                            <Label htmlFor='image' />
-                            <img src={image} value='image' onChange={(e) => setImage(e.target.value)}/>
-                            <Label htmlFor='name'/>
+                            <Label htmlFor='category'>Category</Label>
+                            <Input name='category' value={category} onChange={(e) => setCategory(e.target.value)} />
+                            <Label htmlFor='image'>Image</Label>
+                            <Input name='image' value={image} onChange={(e) => setImage(e.target.value)}/>
+                            <Label htmlFor='name'>Name</Label>
                             <Input name='name' value={name} onChange={(e) => setName(e.target.value)} />
-                            <Label htmlFor='description'/>
+                            <Label htmlFor='description'>Description</Label>
                             <Input name='descripton' value={description} onChange={(e) => setDescription(e.target.value)} />
-                            <Label htmlFor='price'/>
+                            <Label htmlFor='owner'>Owner</Label>
+                            <Input name='owner' value={owner} onChange={(e) => setOwner(e.target.value)} />
+                            <Label htmlFor='price'>Price</Label>
                             <Input name='price' value={price} onChange={(e) => setPrice(e.target.value)} />
                         </CardText>
                         <Button type='submit'>Click to Submit</Button>
                     </CardBody>
                 </Card>
+                </Form>
             </div>
         )
 }

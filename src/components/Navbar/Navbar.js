@@ -9,7 +9,7 @@ import HandmadeGoods from '../sites/HandmadeGoods';
 import Apparel from '../sites/Apparel';
 import Login from '../Auth/Login';
 import Register from '../Auth/Register';
-
+import Account from '../Auth/Account';
 
 const Navbar = (props) => {
 
@@ -37,7 +37,9 @@ const Navbar = (props) => {
                     <Link to='/register'>
                     Sign Up</Link>
                 </NavLink>
-          
+                <NavLink>
+                    <Link to='/account'>Account</Link>
+                    </NavLink>
             <NavLink activeStyle>
                 <Link to='/login'>Sign In</Link>
             </NavLink>
@@ -52,6 +54,7 @@ const Navbar = (props) => {
             <Route path='/apparel'><Apparel /></Route>
             <Route path='/login'><Login updateToken={props.updateToken} /></Route>
             <Route path='/register'><Register updateToken={props.updateToken} /></Route>
+            <Route path='/account'><Account sessionToken={props.sessionToken} protectedViews={props.protectedViews} /></Route>
         </Switch>
         </Router>
     )

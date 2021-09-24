@@ -7,8 +7,8 @@ const MerchandiseTable = (props) => {
         return props.landings.map((landing, index) => {
             return(
                 <tr key={index}>
-                    <th scope ='row'>{landing.image}</th>
-                    <td>{landing.catagory}</td>
+                    <th scope ='row'>{landing.catagory}</th>
+                    <td>{landing.image}</td>
                     <td>{landing.name}</td>
                     <td>{landing.description}</td>
                     <td>{landing.price}</td>

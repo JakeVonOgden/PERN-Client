@@ -1,16 +1,11 @@
 import './App.css';
 import React, {useState, useEffect} from 'react';
 import Navbar from './components/Navbar/Navbar';
-<<<<<<< HEAD
-import Auth from './components/Auth/Auth';
-import MerchandiseIndex from './components/Merchandise/MerchandiseIndex';
-import Placeholder from './components/Merchandise/Placeholder';
-=======
 import Login from './components/Auth/Login';
 import Landing from './components/Landing/Landing';
->>>>>>> 703fd5a9d998cbcf4305343827c48ceae15d047e
 import Footer from './components/sites/Footer';
 import MerchIndex from './components/Merchandise/MerchIndex';
+import MerchandiseIndex from './components/Merchandise/MerchandiseIndex';
 import {BrowserRouter as Router} from 'react-router-dom';
 
    
@@ -39,22 +34,17 @@ const clearToken = () => {
 }
 
 const protectedViews =() => {
-<<<<<<< HEAD
   return (sessionToken === localStorage.getItem('token') ? <MerchandiseIndex token={sessionToken} />
-  : <Auth updateToken={updateToken} />)
-=======
-  return (sessionToken === localStorage.getItem('token') ? <Landing token={sessionToken} />
   : <Login updateToken={updateToken} /> )
->>>>>>> 703fd5a9d998cbcf4305343827c48ceae15d047e
 }
 
   return (
     
     <div className="App">
-     <Navbar clearToken={clearToken} updateToken={updateToken}  />
+     <Navbar clearToken={clearToken} updateToken={updateToken} sessionToken={sessionToken} protectedViews={protectedViews} />
 
     
-     {protectedViews()}
+     {/* {protectedViews()} */}
 
      <Router />
 
