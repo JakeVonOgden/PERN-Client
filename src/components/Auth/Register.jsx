@@ -55,7 +55,7 @@ const handleSubmit = (event) => {
                 </FormGroup>
                 <br /> 
                 
-                <Button href="/account" variant="link" type="submit" >Register</Button>
+                <Button type="submit">Register</Button>
             </Form>
             <hr />
             Already registered?  
