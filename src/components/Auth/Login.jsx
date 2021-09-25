@@ -40,7 +40,7 @@ const handleSubmit = (event) => {
                     </FormGroup>
                     <br />
 
-                    <Button href='/account' type="submit">Login</Button>
+                    <Button type="submit">Login</Button>
             </Form>
             
             <hr />

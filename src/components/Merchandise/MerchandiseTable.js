@@ -7,13 +7,13 @@ const MerchandiseTable = (props) => {
         return props.landings.map((landing, index) => {
             return(
                <tr key={index}>
-                    <th scope ='row'>{landing.catagory}</th>
+                    <th>{landing.category}</th>
                     <td>{landing.image}</td>
                     <td>{landing.name}</td>
                     <td>{landing.description}</td>
                     <td>{landing.price}</td>
                     <td>
-                        <Button color='warning'>Update</Button>
+                        <Button color='warning' onClick={() => {props.editUpdateLanding(landing); props.updateOn()}}>Update</Button>
                         <Button color='danger'>Delete</Button>
                     </td>
                 </tr>

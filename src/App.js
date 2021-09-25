@@ -4,7 +4,6 @@ import Navbar from './components/Navbar/Navbar';
 import Login from './components/Auth/Login';
 import Landing from './components/Landing/Landing';
 import Footer from './components/sites/Footer';
-import MerchIndex from './components/Merchandise/MerchIndex';
 import MerchandiseIndex from './components/Merchandise/MerchandiseIndex';
 import {BrowserRouter as Router} from 'react-router-dom';
 
