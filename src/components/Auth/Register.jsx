@@ -58,11 +58,10 @@ const handleSubmit = (event) => {
                 </FormGroup>
                 <br /> 
                 
-<<<<<<< HEAD
-                <Button variant="link" type="submit" >Register</Button>
-=======
+
+
                 <Button type="submit">Register</Button>
->>>>>>> 87fb5dcbc160e778a01adfe1ec4d54931c83ebeb
+
             </Form>
             <hr />
             Already registered?  
