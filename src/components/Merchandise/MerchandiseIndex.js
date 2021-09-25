@@ -28,7 +28,7 @@ const MerchandiseIndex = (props) => {
             }
             
             const editUpdateLanding = (landing) => {
-                setLandingToUpdate(landing);
+                setMerchandiseToUpdate(landing);
                 console.log(landing);
             }
 
