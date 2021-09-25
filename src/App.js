@@ -1,8 +1,7 @@
 import './App.css';
 import React, {useState, useEffect} from 'react';
-import Nav from './components/Navbar/Navbar';
+import JuniperNav from './components/Navbar/Navbar';
 import Login from './components/Auth/Login';
-import Landing from './components/Landing/Landing';
 import Footer from './components/sites/Footer';
 import MerchandiseIndex from './components/Merchandise/MerchandiseIndex';
 import {BrowserRouter as Router} from 'react-router-dom';
@@ -13,6 +12,7 @@ import {BrowserRouter as Router} from 'react-router-dom';
 function App() {
   
   const [sessionToken, setSessionToken] = useState(''); 
+console.log("app test");
 
   useEffect(() => {
     if (localStorage.getItem('token')){
@@ -32,18 +32,18 @@ const clearToken = () => {
   setSessionToken('');
 }
 
-const protectedViews =() => {
-  return (sessionToken === localStorage.getItem('token') ? <MerchandiseIndex token={sessionToken} />
-  : <Login updateToken={updateToken} /> )
-}
+// const protectedViews =() => {
+//   return (sessionToken === localStorage.getItem('token') ? <MerchandiseIndex token={sessionToken} />
+//   : <Login updateToken={updateToken} /> )
+// }
 
   return (
     
     <div className="App">
-     <Nav clearToken={clearToken} updateToken={updateToken} sessionToken={sessionToken} protectedViews={protectedViews} />
+     <JuniperNav clearToken={clearToken} updateToken={updateToken} sessionToken={sessionToken} />
 
     
-     {/* {protectedViews()} */}
+ 
 
      <Router />
 

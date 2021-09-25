@@ -1,5 +1,5 @@
 import React, {useState } from "react";
-import { Card, CardImg, CardBody, CardText, Label, Input, Button } from "reactstrap";
+import { Card, CardBody, CardText, Label, Input, Button } from "reactstrap";
 
 
 const LandingCreate = (props) => {
