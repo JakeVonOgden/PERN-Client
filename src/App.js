@@ -1,9 +1,9 @@
 import './App.css';
 import React, {useState, useEffect} from 'react';
 import JuniperNav from './components/Navbar/Navbar';
-import Login from './components/Auth/Login';
+// import Login from './components/Auth/Login';
 import Footer from './components/sites/Footer';
-import MerchandiseIndex from './components/Merchandise/MerchandiseIndex';
+// import MerchandiseIndex from './components/Merchandise/MerchandiseIndex';
 import {BrowserRouter as Router} from 'react-router-dom';
 
    
