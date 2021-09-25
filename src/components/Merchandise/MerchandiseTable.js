@@ -22,10 +22,10 @@ const MerchandiseTable = (props) => {
                     <td>{landing.image}</td>
                     <td>{landing.name}</td>
                     <td>{landing.description}</td>
-                    <td>{landing.price}</td>
+                    <td>${landing.price}</td>
                     <td>
-                        <Button color='warning'>Update</Button>
-                        <Button color='danger' onClick={() => {deleteMerchandise(landing)}}>Delete</Button>
+                        <Button color='success' onClick={() => {props.editUpdateMerchandise(landing); props.updateOn()}}>Update</Button>
+                        <Button color='info' onClick={() => {deleteMerchandise(landing)}}>Delete</Button>
                     </td>
                 </tr>
           
