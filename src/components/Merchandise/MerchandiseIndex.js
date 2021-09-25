@@ -13,7 +13,7 @@ const MerchandiseIndex = (props) => {
     const [updateActive, setUpdateActive] = useState(false);
     const [merchandiseToUpdate, setMerchandiseToUpdate] = useState({});
             const fetchLandings = () => {
-                fetch('https://juniper-server.herokuapp.com/merchandise', {
+                fetch('https://juniper-server.herokuapp.com/merchandise/mine', {
                     method: 'GET',
                     headers: new Headers ({
                         'Content-Type': 'application/json',
