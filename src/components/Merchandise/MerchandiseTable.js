@@ -18,7 +18,7 @@ const MerchandiseTable = (props) => {
         return props.landings.map((landing, index) => {
             return(
                <tr key={index}>
-                    <th scope ='row'>{landing.catagory}</th>
+                    <th scope ='row'>{landing.category}</th>
                     <td>{landing.image}</td>
                     <td>{landing.name}</td>
                     <td>{landing.description}</td>
@@ -35,7 +35,7 @@ const MerchandiseTable = (props) => {
 
     return (
         <div>
-            <h3>Merchandise Add History</h3>
+            <h3>Merchandise Available</h3>
             <hr/>
             <Table>
                 <thead>
