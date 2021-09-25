@@ -2,7 +2,18 @@ import React from "react";
 import { Table, Button} from "reactstrap";
 
 const MerchandiseTable = (props) => {
-
+    const deleteMerchandise = (landing) => {
+        fetch(`https://juniper-server.herokuapp.com/merchandise/delete/${landing.id}`, {
+            method: 'DELETE',
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${props.sessionToken}`
+            })
+        })
+        .then(() => props.fetchLandings())
+    }
+    
+    
     const landingMapper = () => {
         return props.landings.map((landing, index) => {
             return(
@@ -14,7 +25,7 @@ const MerchandiseTable = (props) => {
                     <td>{landing.price}</td>
                     <td>
                         <Button color='warning'>Update</Button>
-                        <Button color='danger'>Delete</Button>
+                        <Button color='danger' onClick={() => {deleteMerchandise(landing)}}>Delete</Button>
                     </td>
                 </tr>
           
