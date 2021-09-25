@@ -10,11 +10,10 @@ import { Link } from 'react-router-dom';
 
 const MerchandiseIndex = (props) => {
     const [landings, setLandings] = useState([]);
-    const [updateLanding, setUpdateLanding] = useState(false);
-    const [landingToUpdate, setLandingToUpdate] = useState({});
-
+    const [updateActive, setUpdateActive] = useState(false);
+    const [merchandiseToUpdate, setMerchandiseToUpdate] = useState({});
             const fetchLandings = () => {
-                fetch('https://juniper-server.herokuapp.com/merchandise', {
+                fetch('https://juniper-server.herokuapp.com/merchandise/mine', {
                     method: 'GET',
                     headers: new Headers ({
                         'Content-Type': 'application/json',
@@ -33,13 +32,19 @@ const MerchandiseIndex = (props) => {
                 console.log(landing);
             }
 
+            const editUpdateMerchandise = (landing) => {
+                setMerchandiseToUpdate(landing);
+                console.log(landing);
+            }
+
             const updateOn = () => {
-                setUpdateLanding(true);
+                setUpdateActive(true);
             }
 
             const updateOff = () => {
-                setUpdateLanding(false);
+                setUpdateActive(false);
             }
+
             useEffect(() => {
                 fetchLandings();
             },[])
@@ -54,10 +59,10 @@ const MerchandiseIndex = (props) => {
              </Col>
         
             <Col md='8'>
-                <MerchandiseTable landings={landings} editUpdateLanding={editUpdateLanding} updateOn={updateOn} fetchLandings={fetchLandings} sessionToken={props.sessionToken}/>
+                <MerchandiseTable landings={landings} editUpdateMerchandise={editUpdateMerchandise} updateOn={updateOn} fetchLandings={fetchLandings} sessionToken={props.sessionToken}/>
             </Col>
-            {updateLanding ? <MerchandiseEdit landingToUpdate={landingToUpdate}
-            updateOff={updateOff} sessionToken={props.sessionToken} fetchLandings={fetchLandings}/> : <></> }
+            {updateActive ? <MerchandiseEdit merchandiseToUpdate={merchandiseToUpdate}
+            updateOff={updateOff} sessionToken={props.sessionToken} fetchLandings={fetchLandings}/> : <></>}
         </Row>
     </Container>
     )

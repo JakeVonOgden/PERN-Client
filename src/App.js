@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useState, useEffect} from 'react';
-import Navbar from './components/Navbar/Navbar';
+import Nav from './components/Navbar/Navbar';
 import Login from './components/Auth/Login';
 import Landing from './components/Landing/Landing';
 import Footer from './components/sites/Footer';
@@ -40,7 +40,7 @@ const protectedViews =() => {
   return (
     
     <div className="App">
-     <Navbar clearToken={clearToken} updateToken={updateToken} sessionToken={sessionToken} protectedViews={protectedViews} />
+     <Nav clearToken={clearToken} updateToken={updateToken} sessionToken={sessionToken} protectedViews={protectedViews} />
 
     
      {/* {protectedViews()} */}
