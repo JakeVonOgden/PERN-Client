@@ -6,14 +6,14 @@ import MerchandiseCreate from './MerchandiseCreate';
 import MerchandiseTable from './MerchandiseTable';
 import MerchandiseEdit from './MerchandiseEdit';
 import { Link } from 'react-router-dom';
-
+import APIURL from '../../helpers/environment';
 
 const MerchandiseIndex = (props) => {
     const [landings, setLandings] = useState([]);
     const [updateActive, setUpdateActive] = useState(false);
     const [merchandiseToUpdate, setMerchandiseToUpdate] = useState({});
             const fetchLandings = () => {
-                fetch('https://juniper-server.herokuapp.com/merchandise/mine', {
+                fetch(`${APIURL}merchandise/mine`, {
                     method: 'GET',
                     headers: new Headers ({
                         'Content-Type': 'application/json',

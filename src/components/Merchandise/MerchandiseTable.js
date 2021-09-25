@@ -1,9 +1,10 @@
 import React from "react";
 import { Table, Button} from "reactstrap";
+import APIURL from "../../helpers/environment";
 
 const MerchandiseTable = (props) => {
     const deleteMerchandise = (landing) => {
-        fetch(`https://juniper-server.herokuapp.com/merchandise/delete/${landing.id}`, {
+        fetch(`${APIURL}merchandise/delete/${landing.id}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',

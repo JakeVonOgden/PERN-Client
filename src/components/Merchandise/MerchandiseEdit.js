@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody } from 'reactstrap';
+import APIURL from '../../helpers/environment';
 
 const MerchandiseEdit = (props) => {
     const [editCat, setEditCat] = useState(props.merchandiseToUpdate.category);
@@ -11,7 +12,7 @@ const MerchandiseEdit = (props) => {
 
     const merchandiseUpdate = (event, landing) => {
         event.preventDefault();
-        fetch(`https://juniper-server.herokuapp.com/merchandise/edit/${props.merchandiseToUpdate.id}`, {
+        fetch(`${APIURL}merchandise/edit/${props.merchandiseToUpdate.id}`, {
             method: 'PUT',
             body: JSON.stringify({category: editCat, name: editName, image: editImg, description: editDesc, owner: editOwner, price: editPrc}),
             headers: new Headers({

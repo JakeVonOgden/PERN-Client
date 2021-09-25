@@ -1,6 +1,6 @@
 import React, {useState } from "react";
 import { Card, CardImg, CardBody, CardText, Label, Input, Button, Form } from "reactstrap";
-
+import APIURL from "../../helpers/environment";
 
 const MerchandiseCreate = (props) => {
 
@@ -13,7 +13,7 @@ const MerchandiseCreate = (props) => {
 
         const handleSubmit =(e) => {
             e.preventDefault();
-            fetch('https://juniper-server.herokuapp.com/merchandise/', {
+            fetch(`${APIURL}merchandise/`, {
                 method: 'POST',
                 body: JSON.stringify({category: category, image: image, name: name, description: description, owner: owner, price: price}),
                 headers: new Headers({

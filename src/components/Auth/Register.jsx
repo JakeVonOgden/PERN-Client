@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 
 import {Form, FormGroup, Label, Input, Button, Container} from 'reactstrap';
 import './Register.css';
+import APIURL from '../../helpers/environment';
 
 const Register = (props) => {
 
@@ -22,7 +23,7 @@ const handleSubmit = (event) => {
     // console.log("hello submit")
     event.preventDefault();
     
-    fetch("https://juniper-server.herokuapp.com/user/register", {
+    fetch(`${APIURL}user/register`, {
         method: 'POST',
         body: JSON.stringify({email: email, firstName: firstName, lastName: lastName, password: password}),
         headers: new Headers({
