@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Nav, NavLink, Button, NavItem } from 'reactstrap';
+import { Navbar, NavLink, Button, NavItem } from 'reactstrap';
 import Landing from '../Landing/Landing';
 import Bakery from '../sites/Bakery';
 import WallArt from '../sites/WallArt';
@@ -11,12 +11,12 @@ import Login from '../Auth/Login';
 import Register from '../Auth/Register';
 import Account from '../Auth/Account';
 
-const Navbar = (props) => {
+const Nav = (props) => {
 
     return (
 
         <Router>
-        <Nav>
+        <Navbar color="light" >
             <NavItem style={{display:'flex', justifyContent:'Left', alignItems:'Left'}}>
                 <NavLink activeStyle>
                    <Link to='/'> Home</Link>
@@ -48,7 +48,7 @@ const Navbar = (props) => {
 
                 </NavLink>
               </NavItem>
-        </Nav>
+        </Navbar>
 
         <Switch>
             <Route exact path='/'><Landing /></Route>
@@ -64,4 +64,4 @@ const Navbar = (props) => {
     )
 }
 
-export default Navbar;
+export default Nav;

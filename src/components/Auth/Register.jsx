@@ -12,6 +12,7 @@ const Register = (props) => {
 
 
 
+
 const handleSubmit = (event) => {
     // console.log("hello submit")
     event.preventDefault();
@@ -21,7 +22,7 @@ const handleSubmit = (event) => {
         body: JSON.stringify({email: email, firstName: firstName, lastName: lastName, password: password}),
         headers: new Headers({
             'Content-Type': 'application/json'
-        }),
+        })
     
     }).then(
         (response) => response.json()
@@ -30,7 +31,9 @@ const handleSubmit = (event) => {
         // let token = data.user.sessionToken;
 
         props.updateToken(data.user.sessionToken)
-    }).catch ((err) => console.log(err))
+    })
+    .catch ((err) => console.log(err));
+    
 }
     return(
         <div>
@@ -55,7 +58,7 @@ const handleSubmit = (event) => {
                 </FormGroup>
                 <br /> 
                 
-                <Button href="/account" variant="link" type="submit" >Register</Button>
+                <Button variant="link" type="submit" >Register</Button>
             </Form>
             <hr />
             Already registered?  
