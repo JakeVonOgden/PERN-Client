@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 
 const MerchandiseIndex = (props) => {
-    const [landings, setLandings] = useState('');
+    const [landings, setLandings] = useState([]);
             const fetchLandings = () => {
                 fetch('https://juniper-server.herokuapp.com/merchandise', {
                     method: 'GET',
