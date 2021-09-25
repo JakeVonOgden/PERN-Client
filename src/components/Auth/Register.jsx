@@ -10,7 +10,12 @@ const Register = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-
+const sendAccount = () => {
+    setTimeout(function (){
+        window.location.href = "./account";
+    }, 1000);
+    
+}
 
 
 const handleSubmit = (event) => {
@@ -39,7 +44,7 @@ const handleSubmit = (event) => {
         <div>
        <Container className='register'>
             <h1>Register for an Account</h1>
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={function(event){ handleSubmit(event); sendAccount()}}>
                 <FormGroup>
                     <Label htmlFor="firstName">First Name</Label>
                     <Input onChange={(e) =>setFirstName(e.target.value)} name="firstName" value={firstName} />
