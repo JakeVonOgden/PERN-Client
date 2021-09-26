@@ -7,6 +7,14 @@ const Login = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    const sendAccount = () => {
+        setTimeout(function (){
+            window.location.href = "./account";
+        }, 1000);
+        
+    }
+    
+
 const handleSubmit = (event) => {
     event.preventDefault();
     fetch('https://juniper-server.herokuapp.com/user/login',{
@@ -29,7 +37,7 @@ const handleSubmit = (event) => {
             <Container className='login'>
             <h1>Login</h1>
 
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={function(event){ handleSubmit(event); sendAccount()}}>
                 <FormGroup>
                     <Label htmlFor="email">Email</Label>
                     <Input onChange={(e) => setEmail(e.target.value)} name="email" value={email}/>

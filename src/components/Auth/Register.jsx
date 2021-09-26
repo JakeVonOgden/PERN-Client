@@ -10,6 +10,12 @@ const Register = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+const sendAccount = () => {
+    setTimeout(function (){
+        window.location.href = "./account";
+    }, 1000);
+    
+}
 
 
 const handleSubmit = (event) => {
@@ -21,7 +27,7 @@ const handleSubmit = (event) => {
         body: JSON.stringify({email: email, firstName: firstName, lastName: lastName, password: password}),
         headers: new Headers({
             'Content-Type': 'application/json'
-        }),
+        })
     
     }).then(
         (response) => response.json()
@@ -30,13 +36,15 @@ const handleSubmit = (event) => {
         // let token = data.user.sessionToken;
 
         props.updateToken(data.user.sessionToken)
-    }).catch ((err) => console.log(err))
+    })
+    .catch ((err) => console.log(err));
+    
 }
     return(
         <div>
        <Container className='register'>
             <h1>Register for an Account</h1>
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={function(event){ handleSubmit(event); sendAccount()}}>
                 <FormGroup>
                     <Label htmlFor="firstName">First Name</Label>
                     <Input onChange={(e) =>setFirstName(e.target.value)} name="firstName" value={firstName} />
@@ -55,7 +63,10 @@ const handleSubmit = (event) => {
                 </FormGroup>
                 <br /> 
                 
-                <Button href="/account" variant="link" type="submit" >Register</Button>
+
+
+                <Button type="submit">Register</Button>
+
             </Form>
             <hr />
             Already registered?  

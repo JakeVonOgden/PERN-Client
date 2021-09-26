@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col} from 'reactstrap';
 import {Card, CardImg, CardBody, CardTitle, CardText, Button} from 'reactstrap'
