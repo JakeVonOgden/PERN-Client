@@ -1,13 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col} from 'reactstrap';
-import Bakery from './Bakery';
+import WallArt from './WallArt';
 
-
-const BakeryIndex = (props) => {
+const WallArtIndex = () => {
     const [merch, setMerch] = useState([]); 
 
-    const fetchBakeryMerch = () => {
+    const fetchWallArtMerch = () => {
         fetch('https://juniper-server.herokuapp.com/merchandise/', {
             method: 'GET',
             headers: new Headers ({
@@ -21,16 +20,14 @@ const BakeryIndex = (props) => {
     }
 
     useEffect(() => {
-        fetchBakeryMerch();
+        fetchWallArtMerch();
     }, [])
-
+    
     return (
-        <Container className='bakery' style={{fontFamily: 'fantasy', textAlign:'center'}}>
-             <Bakery merch={merch} fetchBakeryMerch={fetchBakeryMerch} /> 
+        <Container className='wallart' style={{fontFamily: 'fantasy', textAlign:'center'}}>
+            <WallArt merch={merch} fetchWallArtMerch={fetchWallArtMerch} /> 
         </Container>
     )
 }
 
-export default BakeryIndex;
-        
-        
+export default WallArtIndex;
