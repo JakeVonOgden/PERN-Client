@@ -21,6 +21,7 @@ import Apparel from '../sites/Apparel';
 import Login from '../Auth/Login';
 import Register from '../Auth/Register';
 import Account from '../Auth/Account';
+import BakeryIndex from '../sites/BakeryIndex';
 
 const JuniperNav = (props) => {
 
@@ -79,7 +80,7 @@ console.log("navbar test");
 
         <Switch>
             <Route exact path='/'><Landing /></Route>
-            <Route path='/bakery'><Bakery /></Route>
+            <Route path='/bakery'><BakeryIndex /></Route>
             <Route path='/wallart'><WallArt /></Route>
             <Route path='/handmadegoods'><HandmadeGoods /></Route>
             <Route path='/apparel'><Apparel /></Route>

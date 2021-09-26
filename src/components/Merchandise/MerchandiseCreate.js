@@ -60,7 +60,7 @@ const MerchandiseCreate = (props) => {
                             <Label htmlFor='price'>Price</Label>
                             <Input name='price' value={price} onChange={(e) => setPrice(e.target.value)} />
                         </CardText>
-                        <Button type='submit'>Click to Submit</Button>
+                        <Button color = "success" type='submit'>Click to Submit</Button>
                     </CardBody>
                 </Card>
                 </Form>
