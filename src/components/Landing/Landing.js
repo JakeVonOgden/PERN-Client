@@ -13,7 +13,7 @@ const Landing = () => {
             
             
             <div style={{textAlign: 'center'}}>
-                <h1 style={{textAlign:'center'}}>Welcome to Juniper</h1>
+                <h1 style={{textAlign:'center', fontSize: '45px', fontWeight: '500', textShadow: '4px 3px 0px rgba(0,0,0,0), 3px 2px 0px rgba(0,0,0,0.2)'}}>Welcome to Juniper</h1>
                 <img src={juniperPic} id='juniper' height='75' style={{}}/>
             </div>
             

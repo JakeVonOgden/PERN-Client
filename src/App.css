@@ -10,8 +10,11 @@ html {
 }
 
 .footer {
-    position: relative;
+    display:flex;
+    
+    align-items: flex-end;
     width: 100%;
-    bottom: 0;
+    min-height: 30vh;
+    justify-content: center;
     
 }

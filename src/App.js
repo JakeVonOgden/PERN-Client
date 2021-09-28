@@ -51,7 +51,9 @@ const clearToken = () => {
 
 
      <br />
+    
      <Footer />        
+    
     </div>
 
     
