@@ -40,8 +40,10 @@ const MerchandiseIndex = (props) => {
             }
 
             useEffect(() => {
-                fetchLandings();
-            },[])
+                if(props.sessionToken !== '') {
+                    fetchLandings();
+                }
+            },[props.sessionToken])
 
     return (
 
