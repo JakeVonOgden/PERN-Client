@@ -21,6 +21,10 @@ import Apparel from '../sites/Apparel';
 import Login from '../Auth/Login';
 import Register from '../Auth/Register';
 import Account from '../Auth/Account';
+import BakeryIndex from '../sites/BakeryIndex';
+import ApparelIndex from '../sites/ApparelIndex';
+import HandmadeGoodsIndex from '../sites/HandmadeGoodsIndex';
+import WallArtIndex from '../sites/WallArtIndex';
 
 const JuniperNav = (props) => {
 
@@ -79,10 +83,10 @@ console.log("navbar test");
 
         <Switch>
             <Route exact path='/'><Landing /></Route>
-            <Route path='/bakery'><Bakery /></Route>
-            <Route path='/wallart'><WallArt /></Route>
-            <Route path='/handmadegoods'><HandmadeGoods /></Route>
-            <Route path='/apparel'><Apparel /></Route>
+            <Route path='/bakery'><BakeryIndex /></Route>
+            <Route path='/wallart'><WallArtIndex /></Route>
+            <Route path='/handmadegoods'><HandmadeGoodsIndex /></Route>
+            <Route path='/apparel'><ApparelIndex /></Route>
             <Route path='/login'><Login updateToken={props.updateToken} /></Route>
             <Route path='/register'><Register updateToken={props.updateToken} /></Route>
             <Route path='/account'><Account sessionToken={props.sessionToken} protectedViews={props.protectedViews} /></Route>            

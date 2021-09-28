@@ -43,19 +43,24 @@ const MerchandiseCreate = (props) => {
                      <CardBody>
                         <CardText>
                             <Label htmlFor='category'>Category</Label>
-                            <Input name='category' value={category} onChange={(e) => setCategory(e.target.value)} />
+                            <Input type="select" name='category' value={category} onChange={(e) => setCategory(e.target.value)}>
+                                <option value="Apparel">Apparel</option>
+                                <option value="Bakery">Bakery</option>
+                                <option value="HandmadeGoods">Handmade Goods</option>
+                                <option value="WallArt">Wall Art</option>
+                                </Input>
                             <Label htmlFor='image'>Image</Label>
                             <Input name='image' value={image} onChange={(e) => setImage(e.target.value)}/>
                             <Label htmlFor='name'>Name</Label>
                             <Input name='name' value={name} onChange={(e) => setName(e.target.value)} />
                             <Label htmlFor='description'>Description</Label>
                             <Input name='descripton' value={description} onChange={(e) => setDescription(e.target.value)} />
-                            <Label htmlFor='owner'>Owner</Label>
-                            <Input name='owner' value={owner} onChange={(e) => setOwner(e.target.value)} />
+                            {/* <Label htmlFor='owner'>Owner</Label>
+                            <Input name='owner' value={owner} onChange={(e) => setOwner(e.target.value)} /> */}
                             <Label htmlFor='price'>Price</Label>
                             <Input name='price' value={price} onChange={(e) => setPrice(e.target.value)} />
                         </CardText>
-                        <Button type='submit'>Click to Submit</Button>
+                        <Button color = "success" type='submit'>Click to Submit</Button>
                     </CardBody>
                 </Card>
                 </Form>

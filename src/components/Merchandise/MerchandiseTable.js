@@ -19,7 +19,6 @@ const MerchandiseTable = (props) => {
             return(
                <tr key={index}>
                     <th scope ='row'>{landing.category}</th>
-                    <td>{landing.image}</td>
                     <td>{landing.name}</td>
                     <td>{landing.description}</td>
                     <td>${landing.price}</td>
@@ -35,13 +34,12 @@ const MerchandiseTable = (props) => {
 
     return (
         <div>
-            <h3>Merchandise Available</h3>
+            <h3>Listed Merchandise</h3>
             <hr/>
             <Table>
                 <thead>
                     <tr>
                     <th>Category</th>
-                    <th>Image</th>
                     <th>Name</th>
                     <th>Description</th>
                     <th>Price</th>

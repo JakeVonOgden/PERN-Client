@@ -1,57 +1,34 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col, Card, CardImg, CardText} from 'reactstrap';
+import { Container, Row, Col, Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle} from 'reactstrap';
 
-const WallArt = () => {
-    return (
-        <Container style={{fontFamily:'fantasy', textAlign:'center'}}>
-            <Row>
-                <Col md='3'>
+const WallArt = (props) => {
+    
+    const wallArtMapper = () => {
+        return props.merch.map((merchandise, index) => {
+            if (merchandise.category == 'WallArt') {
+            return (
+                <Col md='4' key={index}>
                 <Card>
-                    <CardImg src='https://images.unsplash.com/photo-1557215235-21d6064d6ff9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8d2FsbCUyMGFydHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' width={100} height={300} alt='woman' />
-                    <CardText>
-                        Woman In Color
-                        Oil-based Painting
-                        $105
-                    </CardText>
-                </Card>
-                </Col>
-            
-        
-            <Col md='3'>
-            <Card>
-                    <CardImg src='https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8d2FsbCUyMGFydHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' width={100} height={300} alt='abstract' />
-                    <CardText>
-                      Colors Spilling Over
-                      Abstract Painting 
-                      $85 
-                    </CardText>
+                    <CardImg src = {merchandise.image} width={100} height={330} />
+                    <CardBody>
+                        <CardTitle tag='h3'>{merchandise.name}</CardTitle>
+                        <CardSubtitle tag='h5'>  ${merchandise.price}</CardSubtitle>
+                        <CardText tag='h6'>  {merchandise.description}</CardText>
+                    </CardBody>
                 </Card>
             </Col>
-       
-            <Col md='3'>
-            <Card>
-                    <CardImg src='https://media.istockphoto.com/photos/luxury-black-interior-living-room-with-modern-minimalist-italian-picture-id1250307269?b=1&k=20&m=1250307269&s=170667a&w=0&h=sHbeST1gw0hN2UsW2-UG0rkjdAcA10kUSjtklamDcG0=' width={100} height={300}alt='luxury' />
-                    <CardText>
-                        Looking Sleek
-                        Luxury Black and White Painting
-                        $65
-                    </CardText>
-                </Card>
-            </Col>
-         <Col md='3'>
-            <Card>
-                    <CardImg src='https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YXJ0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' width={100} height={300} alt='flowers' />
-                    <CardText>
-                        A Beautiful Setting
-                        Colorful flowers
-                        $50
-                    </CardText>
-                </Card>
-            </Col>
-        </Row>
+            )
+            }
+        })
+    }
+    
+    return (
+        <Container className="wallart">
+            <Row>
+                {wallArtMapper()}
+            </Row>
         </Container>
-        
     )
 }
 
