@@ -1,0 +1,20 @@
+.App {
+    background-color: #20bf55;
+    background-image: linear-gradient(315deg, #20bf55 0%, #01baef 100%);
+    min-height: 100vh;
+}
+
+html {
+    background-color: #20bf55;
+    background-image: linear-gradient(315deg, #20bf55 0%, #01baef 100%);
+}
+
+.footer {
+    display:flex;
+    
+    align-items: flex-end;
+    width: 100%;
+    min-height: 30vh;
+    justify-content: center;
+    
+}

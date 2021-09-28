@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col} from 'reactstrap';
-import {Card, CardImg, CardBody, CardTitle, CardText, Button} from 'reactstrap'
 import MerchandiseCreate from './MerchandiseCreate';
 import MerchandiseTable from './MerchandiseTable';
 import MerchandiseEdit from './MerchandiseEdit';
-import { Link } from 'react-router-dom';
-import APIURL from '../../helpers/environment';
+
+
 
 const MerchandiseIndex = (props) => {
     const [landings, setLandings] = useState([]);
@@ -41,8 +40,10 @@ const MerchandiseIndex = (props) => {
             }
 
             useEffect(() => {
-                fetchLandings();
-            },[])
+                if(props.sessionToken !== '') {
+                    fetchLandings();
+                }
+            },[props.sessionToken])
 
     return (
 
