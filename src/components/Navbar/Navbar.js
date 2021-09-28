@@ -36,9 +36,9 @@ console.log("navbar test");
         <div>
         <Container>
         <Router>
-        <Navbar color="light" light expand="md" >
+        <Navbar style={{background: 'rgba(0,0,0,0'}} light expand="md" >
             
-            <NavbarBrand href="/" className="mr-auto">Juniper</NavbarBrand>
+            <NavbarBrand href="/" className="mr-auto" style={{color: 'rgb(0,0,0)'}}>Juniper</NavbarBrand>
             <NavbarToggler onClick={toggle} className="mr-2" /> 
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="ml-auto" navbar>

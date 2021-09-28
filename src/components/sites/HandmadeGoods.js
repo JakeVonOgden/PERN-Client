@@ -6,29 +6,28 @@ const HandmadeGoods = (props) => {
     
     const handmadeGoodsMapper = () => {
         return props.merch.map((merchandise, index) => {
-            if (merchandise.category == 'HandmadeGoods') {
-            return (
-                <Col md='4' key={index}>
-                <Card>
-                    <CardImg src = {merchandise.image} width={100} height={330} />
-                    <CardBody>
-                        <CardTitle tag='h3'>{merchandise.name}</CardTitle>
-                        <CardSubtitle tag='h5'>  ${merchandise.price}</CardSubtitle>
-                        <CardText tag='h6'>  {merchandise.description}</CardText>
-                    </CardBody>
-                </Card>
-            </Col>
-            )
+            if(merchandise.category == 'HandmadeGoods') {
+                return (
+                    <Col style={{padding: '10px'}} key={index}>
+                        <Card style={{background: 'rgb(60,160,255,0.7)', borderRadius: '25px', boxShadow: '6px 6px 4px 2px rgba(0, 0, 0, 0.75)', padding: '10px', maxWidth: '360px'}}>
+                            <CardImg src = {merchandise.image} style={{borderTopLeftRadius: '25px', borderTopRightRadius: '25px',}} width={100} height={260} />
+                            <CardBody>
+                                <CardTitle style={{fontFamily: 'sans-serif', fontSize: '23px', fontWeight: '600', padding: '0'}}>{merchandise.name}&nbsp;&nbsp;&nbsp;${merchandise.price}</CardTitle>
+                                <CardSubtitle style={{fontFamily: 'sans-serif', fontSize: '15px', fontWeight: '600'}}>{merchandise.description}</CardSubtitle>
+                            </CardBody>
+                        </Card>
+                    </Col>
+                )
             }
         })
     }
-    
+                    
     return (
-        <Container className="handmadegoods">
-        <Row>
-            {handmadeGoodsMapper()}
-        </Row>
-    </Container>
+        <Container fluid='sm'>
+            <Row xs='3'>
+                {handmadeGoodsMapper()}
+            </Row>
+        </Container>
     )
 }
 
