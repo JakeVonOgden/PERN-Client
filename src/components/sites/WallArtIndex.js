@@ -2,12 +2,13 @@ import React, {useEffect, useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col} from 'reactstrap';
 import WallArt from './WallArt';
+import APIURL from '../../helpers/environment';
 
 const WallArtIndex = () => {
     const [merch, setMerch] = useState([]); 
 
     const fetchWallArtMerch = () => {
-        fetch('https://juniper-server.herokuapp.com/merchandise/', {
+        fetch(`${APIURL}merchandise/`, {
             method: 'GET',
             headers: new Headers ({
                 'Content-Type': 'application/json',

@@ -2,12 +2,13 @@ import React, {useEffect, useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col} from 'reactstrap';
 import HandmadeGoods from './HandmadeGoods';
+import APIURL from '../../helpers/environment';
 
 const HandmadeGoodsIndex = () => {
     const [merch, setMerch] = useState([]); 
 
     const fetchHandmadeGoodsMerch = () => {
-        fetch('https://juniper-server.herokuapp.com/merchandise/', {
+        fetch(`${APIURL}merchandise/`, {
             method: 'GET',
             headers: new Headers ({
                 'Content-Type': 'application/json',

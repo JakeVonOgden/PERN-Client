@@ -1,6 +1,6 @@
 import React, {useState } from "react";
 import { Card, CardBody, CardText, Label, Input, Button, Form, Container } from "reactstrap";
-
+import APIURL from "../../helpers/environment";
 
 const MerchandiseCreate = (props) => {
 

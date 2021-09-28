@@ -4,7 +4,7 @@ import { Container, Row, Col} from 'reactstrap';
 import MerchandiseCreate from './MerchandiseCreate';
 import MerchandiseTable from './MerchandiseTable';
 import MerchandiseEdit from './MerchandiseEdit';
-
+import APIURL from '../../helpers/environment';
 
 
 const MerchandiseIndex = (props) => {
