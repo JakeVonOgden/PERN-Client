@@ -4,8 +4,6 @@ import { Container, Row, Col, Card, CardImg, CardText, CardBody, CardTitle, Card
 
 const Bakery = (props) => {
     
-   
-    
     const bakeryMapper = () => {
         return props.merch.map((merchandise, index) => {
             if(merchandise.category == 'Bakery') {
