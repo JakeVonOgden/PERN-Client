@@ -3,8 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col} from 'reactstrap';
 import Apparel from './Apparel';
 
-
-
 const ApparelIndex = () => {
     const [merch, setMerch] = useState([]); 
 
