@@ -55,7 +55,10 @@ const handleSubmit = (event) => {
         setSuccessCheck(true)
         props.updateToken(data.user.sessionToken)
     })
-    .catch ((err) => console.log(err));
+    .catch ((err) => {
+        console.log(err)
+        alert(`Email in use`)
+    });
 }
     return(
         <div>
