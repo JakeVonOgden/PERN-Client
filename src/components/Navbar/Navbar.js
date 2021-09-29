@@ -37,8 +37,9 @@ console.log("navbar test");
         <Container>
         <Router>
         <Navbar style={{background: 'rgba(0,0,0,0'}} light expand="md" >
-            
+    
             <NavbarBrand href="/" className="mr-auto" style={{color: 'rgb(0,0,0)'}}>Juniper</NavbarBrand>
+     
             <NavbarToggler onClick={toggle} className="mr-2" /> 
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="ml-auto" navbar>
@@ -77,8 +78,10 @@ console.log("navbar test");
                         </DropdownItem>
                     </DropdownMenu>
                 </UncontrolledDropdown>
+                
                 </Nav>
                 </Collapse>
+             
          </Navbar>
 
         <Switch>
