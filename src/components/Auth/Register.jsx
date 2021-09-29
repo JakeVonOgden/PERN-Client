@@ -52,12 +52,10 @@ const handleSubmit = (event) => {
         (response) => response.json()
     ).then((data) => {
         console.log("hello", data.user.sessionToken);
-        // let token = data.user.sessionToken;
-
+        setSuccessCheck(true)
         props.updateToken(data.user.sessionToken)
     })
     .catch ((err) => console.log(err));
-    
 }
     return(
         <div>
