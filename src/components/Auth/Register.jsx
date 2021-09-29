@@ -9,18 +9,36 @@ const Register = (props) => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
+    const [successCheck, setSuccessCheck] = useState(false);
     const [password, setPassword] = useState('');
+    const passwordEx = /^[A-Za-z_0-9_!@#$%^&* .]{5,30}$/
+    const emailEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    const passAlert = () => {
+        alert("Oops! password must contain at least 5 characters")
+      }
+      const mailAlert = () => {
+        alert (
+            "Oops! --> "
+            + '' + '' + '' +
+            "email format invalid --> Try "
+            + '' + '' + ''
+            +
+            "Anything @ Anything . Anything"
+        )
+      }
 
-const sendAccount = () => {
-    setTimeout(function (){
-        window.location.href = "./account";
-    }, 1000);
-    
-}
+    const sendAccount = () => { 
+        if (successCheck === true) {
+        setTimeout(function (){
+            window.location.href = "./account";
+        }, 1000);
+        }
+    }
 
 
 const handleSubmit = (event) => {
-    // console.log("hello submit")
+    if (passwordEx.test(password) !== true) {return passAlert()};
+    if (emailEx.test(email) !== true) {return mailAlert()};
     event.preventDefault();
     
     fetch(`${APIURL}user/register`, {
