@@ -9,19 +9,47 @@ const Register = (props) => {
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [successCheck, setSuccessCheck] = useState(false);
+    const passwordEx = /^[A-Za-z_0-9_!@#$%^&* .]{5,30}$/
+    const emailEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-const sendAccount = () => {
+    const passAlert = () => {
+        alert("Oops! password must contain at least 5 characters")
+      }
+
+      const mailAlert = () => {
+        alert (
+            "Oops! --> "
+            + '' + '' + '' +
+            "email format invalid --> Try "
+            + '' + '' + ''
+            +
+            "Anything @ Anything . Anything"
+            
+        )
+      }
+
+    
+    
+    const sendAccount = () => { 
+    if (successCheck === true) {
     setTimeout(function (){
+        
         window.location.href = "./account";
     }, 1000);
+    }
     
 }
+
 
 
 const handleSubmit = (event) => {
     // console.log("hello submit")
     event.preventDefault();
+    if (passwordEx.test(password) !== true) {return passAlert()};
+    if (emailEx.test(email) !== true) {return mailAlert()};
     
+  
     fetch("https://juniper-server.herokuapp.com/user/register", {
         method: 'POST',
         body: JSON.stringify({email: email, firstName: firstName, lastName: lastName, password: password}),
@@ -34,7 +62,7 @@ const handleSubmit = (event) => {
     ).then((data) => {
         console.log("hello", data.user.sessionToken);
         // let token = data.user.sessionToken;
-
+        setSuccessCheck(true)
         props.updateToken(data.user.sessionToken)
     })
     .catch ((err) => console.log(err));
